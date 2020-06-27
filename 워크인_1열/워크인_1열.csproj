@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9740457-45AB-4B0D-B243-EC99D3CD42A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>워크인_1열</RootNamespace>
+    <AssemblyName>워크인_1열</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Gaming Console.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FarPoint.CalcEngine, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Excel, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Localization, Version=9.20.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PDF, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Chart, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Spread, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.Win.PluginInputMan, Version=9.35.20161.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="Iocomp.Instrumentation.WF45.Common, Version=4.0.6.14325, Culture=neutral, PublicKeyToken=a217a64fde564c89" />
+    <Reference Include="Iocomp.Instrumentation.WF45.Plot, Version=4.0.6.14358, Culture=neutral, PublicKeyToken=a217a64fde564c89" />
+    <Reference Include="Iocomp.Instrumentation.WF45.Pro, Version=4.0.6.14360, Culture=neutral, PublicKeyToken=a217a64fde564c89" />
+    <Reference Include="Iocomp.Instrumentation.WF45.Std, Version=4.0.6.14362, Culture=neutral, PublicKeyToken=a217a64fde564c89" />
+    <Reference Include="log4net">
+      <HintPath>..\..\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=19.0.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298" />
+    <Reference Include="NationalInstruments.UI, Version=19.0.45.49154, Culture=neutral, PublicKeyToken=4febd62461bf11a4" />
+    <Reference Include="NationalInstruments.UI.WindowsForms, Version=19.0.45.49154, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
+    <Reference Include="SDKNetLib">
+      <HintPath>..\..\DLL\SDKNetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unme.Common">
+      <HintPath>..\..\DLL\Unme.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CloseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseForm.designer.cs">
+      <DependentUpon>CloseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxItem.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="DelayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelayForm.designer.cs">
+      <DependentUpon>DelayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DobulbufferComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="iniClass.cs" />
+    <Compile Include="IOControl.cs" />
+    <Compile Include="LedBulb.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MES_Control.cs" />
+    <Compile Include="PanelMeter.cs" />
+    <Compile Include="PasswordCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordCheckForm.designer.cs">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordSetForm.designer.cs">
+      <DependentUpon>PasswordSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCANBasic.cs" />
+    <Compile Include="pio821.cs" />
+    <Compile Include="PISODIO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecSetting.designer.cs">
+      <DependentUpon>SpecSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSet.designer.cs">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="var.cs" />
+    <EmbeddedResource Include="CloseForm.resx">
+      <DependentUpon>CloseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelayForm.resx">
+      <DependentUpon>DelayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordCheckForm.resx">
+      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordSetForm.resx">
+      <DependentUpon>PasswordSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SpecSetting.resx">
+      <DependentUpon>SpecSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSet.resx">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02 - PDF Files White.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03 - Excel Blue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\04 - Excel White.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12 - AI Files White.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0041.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\79.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\185.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\248.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5513.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5514.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5546.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Audio Symbol 02.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Battery Options.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Battery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitlocker Encryption.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bluetooth.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card reader %28black%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change Disk.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Children Restricted.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configurations.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contacts Blue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contacts White.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contacts.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control Panel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cord4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Danger Shield.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Downloads.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eject.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Etc0149.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explorer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favorites.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Firewall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flash drive %28black%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flash drive %28green%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flash drive %28pink%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flash Live Icon 12.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy Drive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder - Home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gaming Console.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genuine Advantage.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HDD %28blue%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HDD %28yellow%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HDD Firewire.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HDD USB.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_22_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_189_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Installation Package.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Internal Drive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joystick.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keys.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loudspeaker.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Memory card SD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft Management Console.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobility Options.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobsync.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mouse.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Music.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Documents.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My Documents2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\My PC 01.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nano Black.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ncRadio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Net Drive Disconnected.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notepad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Offline Web Pages.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad Lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Lock2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Lock3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Unlock_36Pixel1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Unlock_36Pixel2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Unlock1 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pad_Unlock1 %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parental.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PCI-card.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDA.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Performance Report.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Performance.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLAYLIST.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Private Badge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReadyBoost.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recent Items.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recycle Bin Full.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register Windows.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoteControl.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restricted.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Safe Shield.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security Center.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smartcard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start Menu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sync.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System Configurations.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tablet PC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tablet Pen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taskmgr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Typing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UPS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USB Drive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USB logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Account Control.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Account.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning Shield.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome Center.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Journal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Mail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Sidebar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wireless Adapter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wordpad file.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wordpad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrong.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZIP Drive Error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\시스템 종료_0_4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gaming Console.ico" />
+    <None Include="Resources\Accessibility Warning.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
